@@ -54,3 +54,29 @@ function hourglassTip(){
 setInterval(hourglassTip, 3000);
 
 hourglassTip();
+
+// Image Slideshow
+
+var i = 0; // Start point
+var images = [];
+var time = 3000;
+
+// Image List
+images[0] = 'img/image1.jpeg';
+images[1] = 'img/image2.jpeg';
+images[2] = 'img/image3.jpeg';
+
+// Change Image
+function changeImg(){
+	document.slide.src = images[i];
+
+	if(i < images.length - 1){
+		i++;
+	} else {
+		i = 0;
+	}
+
+	setTimeout("changeImg()", time);
+}
+
+window.onload = changeImg;
